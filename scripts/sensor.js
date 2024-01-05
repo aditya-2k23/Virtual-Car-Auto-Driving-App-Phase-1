@@ -1,7 +1,6 @@
 class Sensor {
   constructor(car) {
     this.car = car;
-
     this.rayCount = 5;
     this.rayLength = 150;
     this.raySpread = Math.PI / 2;
@@ -20,6 +19,7 @@ class Sensor {
 
   #getReading(ray, roadBorders, traffic) {
     let touches = [];
+
     for (let i = 0; i < roadBorders.length; i++) {
       const touch = getIntersection(
         ray[0],
@@ -66,10 +66,7 @@ class Sensor {
           this.rayCount == 1 ? 0.5 : i / (this.rayCount - 1)
         ) + this.car.angle;
 
-      const start = {
-        x: this.car.x,
-        y: this.car.y,
-      };
+      const start = { x: this.car.x, y: this.car.y };
       const end = {
         x: this.car.x - Math.sin(rayAngle) * this.rayLength,
         y: this.car.y - Math.cos(rayAngle) * this.rayLength,

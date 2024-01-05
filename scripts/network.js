@@ -1,4 +1,4 @@
-class NueralNetwork {
+class NeuralNetwork {
   constructor(neuronCounts) {
     this.levels = [];
     for (let i = 0; i < neuronCounts.length - 1; i++) {
@@ -8,7 +8,7 @@ class NueralNetwork {
 
   static feedForward(givenInputs, network) {
     let outputs = Level.feedForward(givenInputs, network.levels[0]);
-    for (let i = 0; i < network.levels.length; i++) {
+    for (let i = 1; i < network.levels.length; i++) {
       outputs = Level.feedForward(outputs, network.levels[i]);
     }
     return outputs;
