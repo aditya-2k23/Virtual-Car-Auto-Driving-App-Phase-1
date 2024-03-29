@@ -18,16 +18,16 @@ class Controls {
   #addKeyboardListeners() {
     document.onkeydown = (event) => {
       switch (event.key) {
-        case "ArrowLeft":
+        case "ArrowLeft" || "a":
           this.left = true;
           break;
-        case "ArrowRight":
+        case "ArrowRight" || "d":
           this.right = true;
           break;
-        case "ArrowUp":
+        case "ArrowUp" || "w":
           this.forward = true;
           break;
-        case "ArrowDown":
+        case "ArrowDown" || "s":
           this.reverse = true;
           break;
       }
